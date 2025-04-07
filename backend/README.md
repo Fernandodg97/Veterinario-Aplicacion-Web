@@ -81,6 +81,7 @@ net.xeill.elpuig.veterinario
 │   ├── CouchbaseConfig.java
 │   └── CorsConfig.java
 ├── controllers
+│   ├── HomeController.java
 │   ├── UsuarioController.java
 │   └── MascotaController.java
 ├── models
