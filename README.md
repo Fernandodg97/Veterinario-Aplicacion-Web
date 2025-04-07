@@ -28,52 +28,82 @@ Este proyecto consiste en una aplicación completa para la gestión de una clín
 - Interfaz intuitiva con diseño responsive
 - Navegación fluida entre secciones relacionadas
 
-## 🔧 Configuración del Entorno
+## 🔧 Instalación y Configuración
+
+### Repositorio
+El proyecto está alojado en GitHub: [Veterinario-Aplicacion-Web](https://github.com/Fernandodg97/Veterinario-Aplicacion-Web)
 
 ### Requisitos Previos
 - Node.js (v14 o superior)
 - npm o yarn
 - Java 21
 - Couchbase Server
+- Git
 
-### Backend
+### Instalación del Backend
 
-#### Couchbase
-Asegúrate de tener Couchbase Server corriendo en `localhost` y con el bucket `veterinario` creado. Usuario y contraseña deben ser `usuario`.
-
-#### Configuración
-```properties
-spring.application.name=veterinario
-server.port=4040
-
-# Configuración de Couchbase
-spring.mvc.pathmatch.matching-strategy=ANT_PATH_MATCHER
-spring.couchbase.connection-string=localhost
-spring.couchbase.bucket.name=veterinario
-spring.couchbase.username=usuario
-spring.couchbase.password=usuario
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/Fernandodg97/Veterinario-Aplicacion-Web.git
+cd Veterinario-Aplicacion-Web
 ```
 
-### Frontend
+2. Configurar Couchbase:
+   - Instalar Couchbase Server desde [couchbase.com](https://www.couchbase.com/downloads)
+   - Iniciar Couchbase Server
+   - Crear un nuevo bucket llamado `veterinario`
+   - Configurar un usuario con nombre y contraseña `usuario`
 
-#### Instalación
+3. Configurar el backend:
+   - Abrir el archivo `src/main/resources/application.properties`
+   - Verificar que la configuración coincida con tu instalación de Couchbase:
+   ```properties
+   spring.application.name=veterinario
+   server.port=4040
+   spring.mvc.pathmatch.matching-strategy=ANT_PATH_MATCHER
+   spring.couchbase.connection-string=localhost
+   spring.couchbase.bucket.name=veterinario
+   spring.couchbase.username=usuario
+   spring.couchbase.password=usuario
+   ```
+
+4. Compilar y ejecutar el backend:
 ```bash
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/clinica-veterinaria-frontend.git
+mvn clean install
+mvn spring-boot:run
+```
 
-# Entrar al directorio
-cd clinica-veterinaria-frontend
+### Instalación del Frontend
 
-# Instalar dependencias
+1. Navegar al directorio del frontend:
+```bash
+cd frontend
+```
+
+2. Instalar dependencias:
+```bash
 npm install
 # o
 yarn install
+```
 
-# Iniciar la aplicación en modo desarrollo
+3. Configurar variables de entorno:
+   - Crear un archivo `.env` en el directorio `frontend`
+   - Añadir la siguiente configuración:
+   ```
+   REACT_APP_API_URL=http://localhost:4040/api
+   ```
+
+4. Iniciar el frontend en modo desarrollo:
+```bash
 npm start
 # o
 yarn start
 ```
+
+La aplicación estará disponible en:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:4040
 
 ## 📁 Estructura del Proyecto
 
