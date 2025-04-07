@@ -2,11 +2,11 @@ package net.xeill.elpuig.veterinario.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import net.xeill.elpuig.veterinario.model.*;
-import net.xeill.elpuig.veterinario.service.*;
+import net.xeill.elpuig.veterinario.model.MascotaModel;
+import net.xeill.elpuig.veterinario.model.UsuarioModel;
+import net.xeill.elpuig.veterinario.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/usuarios") // Define el punto de acceso para las solicitudes HTTP que se refieren a los usuarios.
@@ -14,7 +14,7 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService; // Dependencia del servicio para gestionar la lógica de negocio de los usuarios.
 
-    @Autowired // Inyección de dependencias del servicio UsuarioService.
+    // Inyección de dependencias del servicio UsuarioService.
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }

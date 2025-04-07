@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,7 +15,6 @@ public class TratamientoService {
     // Se inyecta el repositorio que maneja las operaciones CRUD para los tratamientos
     private final TratamientoRepository tratamientoRepository;
 
-    @Autowired
     public TratamientoService(TratamientoRepository tratamientoRepository) {
         this.tratamientoRepository = tratamientoRepository; // Se asigna el repositorio en el constructor
     }

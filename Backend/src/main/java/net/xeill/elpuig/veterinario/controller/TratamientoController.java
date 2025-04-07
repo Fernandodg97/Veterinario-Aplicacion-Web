@@ -5,7 +5,6 @@ import net.xeill.elpuig.veterinario.service.TratamientoService;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +15,6 @@ public class TratamientoController {
     // Se inyecta el servicio que maneja los tratamientos
     private final TratamientoService tratamientoService;
 
-    @Autowired
     public TratamientoController(TratamientoService tratamientoService) {
         this.tratamientoService = tratamientoService; // Se asigna el servicio en el constructor
     }
