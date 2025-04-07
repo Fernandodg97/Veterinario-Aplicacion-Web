@@ -40,12 +40,18 @@ El proyecto está alojado en GitHub: [Veterinario-Aplicacion-Web](https://github
 - Couchbase Server
 - Git
 
-### Instalación del Backend
-
-1. Clonar el repositorio:
+### Instalación
+Clonar el repositorio:
 ```bash
 git clone https://github.com/Fernandodg97/Veterinario-Aplicacion-Web.git
-cd Veterinario-Aplicacion-Web
+cd Veterinario-Aplicacion-Web/
+```
+
+### Instalación del Backend
+
+1. Navegar al directorio del Backend:
+```bash
+cd backend
 ```
 
 2. Configurar Couchbase:
