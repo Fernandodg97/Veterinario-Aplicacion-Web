@@ -87,22 +87,15 @@ npm install
 yarn install
 ```
 
-3. Configurar variables de entorno:
-   - Crear un archivo `.env` en el directorio `frontend`
-   - Añadir la siguiente configuración:
-   ```
-   REACT_APP_API_URL=http://localhost:4040/api
-   ```
-
-4. Iniciar el frontend en modo desarrollo:
+3. Iniciar el frontend en modo desarrollo:
 ```bash
-npm start
+npm run dev
 # o
-yarn start
+yarn dev
 ```
 
 La aplicación estará disponible en:
-- Frontend: http://localhost:3000
+- Frontend: http://localhost:5173
 - Backend: http://localhost:4040
 
 ## 📁 Estructura del Proyecto
