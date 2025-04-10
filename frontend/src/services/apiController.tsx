@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { ApiResponse } from '../types';
 
 // URL base de la API
-const API_URL = 'http://192.168.251.60:4040/api';
+const API_URL = 'http://localhost:4040/api';
 
 // Configuración de axios con interceptores
 const apiClient = axios.create({
