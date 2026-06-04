@@ -128,6 +128,14 @@ spring.couchbase.password=usuario
 
 ---
 
+## 📚 Documentacion
+
+| Archivo | Descripcion |
+|---|---|
+| [`Presentacion_Comunidad.pdf`](./Presentacion_Comunidad.pdf) | Presentacion del proyecto |
+
+---
+
 ## 👨‍💻 Autor
 
 | | |
