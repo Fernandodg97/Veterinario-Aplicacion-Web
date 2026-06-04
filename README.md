@@ -1,213 +1,141 @@
-# 🐾 Clínica Veterinaria - Proyecto Completo
+# Clinica Veterinaria
 
-Este proyecto consiste en una aplicación completa para la gestión de una clínica veterinaria, dividida en dos partes: backend y frontend.
+[![Java](https://img.shields.io/badge/Java_21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Couchbase](https://img.shields.io/badge/Couchbase-EA2328?style=for-the-badge&logo=couchbase&logoColor=white)](https://www.couchbase.com/)
 
-## 📦 Tecnologías Utilizadas
+---
 
-### Backend
-- Java 21
-- Spring Boot 3.4.4
-- Spring Data Couchbase
-- Spring Web
-- Maven (WAR packaging)
-- Couchbase Server
-- Tomcat (servidor embebido)
+## 👋 Para recruiters
 
-### Frontend
-- React 
-- TypeScript
-- React Router DOM
-- Axios
-- CSS
+Aplicacion web fullstack para la gestion de una clinica veterinaria: usuarios, mascotas y tratamientos. Backend desarrollado con **Java + Spring Boot** y frontend SPA con **React + TypeScript**, conectados a traves de una API REST.
 
-## 🚀 Características Principales
+**Stack:** Java 21 · Spring Boot 3.4 · React · TypeScript · Couchbase · Vite · Axios
 
-- Gestión completa de usuarios (propietarios de mascotas)
-- Administración de mascotas asociadas a usuarios
-- Registro y seguimiento de tratamientos médicos
-- Interfaz intuitiva con diseño responsive
-- Navegación fluida entre secciones relacionadas
+**Destacado:**
+- Arquitectura fullstack desacoplada: API REST en Spring Boot consumida por SPA en React
+- Base de datos NoSQL documental con **Couchbase**, modelo de datos anidado (usuario > mascotas > tratamientos)
+- **SPA con React Router** con navegacion fluida entre usuarios, mascotas y tratamientos
+- **Dashboard** con contadores en tiempo real de usuarios, mascotas y tratamientos
+- Diseño responsive con navegacion adaptada a distintos dispositivos
 
-## 🔧 Instalación y Configuración
+---
 
-### Repositorio
-El proyecto está alojado en GitHub: [Veterinario-Aplicacion-Web](https://github.com/Fernandodg97/Veterinario-Aplicacion-Web)
+## 🛠️ Stack tecnologico
 
-### Requisitos Previos
-- Node.js (v14 o superior)
-- npm o yarn
-- Java 21
-- Couchbase Server
-- Git
+**Backend** Java 21 · Spring Boot 3.4.4 · Spring Data Couchbase · Spring Web · Maven
 
-### Instalación
-Clonar el repositorio:
-```bash
-git clone https://github.com/Fernandodg97/Veterinario-Aplicacion-Web.git
-cd Veterinario-Aplicacion-Web/
-```
+**Frontend** React · TypeScript · React Router DOM · Axios · Vite · CSS
 
-### Instalación del Backend
+**Base de datos** Couchbase Server (NoSQL documental)
 
-1. Navegar al directorio del Backend:
-```bash
-cd backend
-```
+---
 
-2. Configurar Couchbase:
-   - Instalar Couchbase Server desde [couchbase.com](https://www.couchbase.com/downloads)
-   - Iniciar Couchbase Server
-   - Crear un nuevo bucket llamado `veterinario`
-   - Configurar un usuario con nombre y contraseña `usuario`
+## ✨ Funcionalidades
 
-3. Configurar el backend:
-   - Abrir el archivo `src/main/resources/application.properties`
-   - Verificar que la configuración coincida con tu instalación de Couchbase:
-   ```properties
-   spring.application.name=veterinario
-   server.port=4040
-   spring.mvc.pathmatch.matching-strategy=ANT_PATH_MATCHER
-   spring.couchbase.connection-string=localhost
-   spring.couchbase.bucket.name=veterinario
-   spring.couchbase.username=usuario
-   spring.couchbase.password=usuario
-   ```
+| Modulo | Descripcion |
+|---|---|
+| **Usuarios** | CRUD completo de propietarios de mascotas |
+| **Mascotas** | Gestion de mascotas vinculadas a cada usuario |
+| **Tratamientos** | Registro de tratamientos por mascota (medicamento, dosis, duracion) |
+| **Dashboard** | Contadores globales y listados de actividad reciente |
 
-4. Compilar y ejecutar el backend:
-```bash
-mvn clean install
-mvn spring-boot:run
-```
-
-### Instalación del Frontend
-
-1. Navegar al directorio del frontend:
-```bash
-cd frontend
-```
-
-2. Instalar dependencias:
-```bash
-npm install
-# o
-yarn install
-```
-
-3. Iniciar el frontend en modo desarrollo:
-```bash
-npm run dev
-# o
-yarn dev
-```
-
-La aplicación estará disponible en:
-- Frontend: http://localhost:5173
-- Backend: http://localhost:4040
-
-## 📁 Estructura del Proyecto
-
-### Backend
-```
-net.xeill.elpuig.veterinario
-├── configs
-│   ├── CouchbaseConfig.java
-│   └── CorsConfig.java
-├── controllers
-|   ├── HomeController.java
-│   ├── UsuarioController.java
-│   └── MascotaController.java
-├── models
-│   ├── Usuario.java
-│   ├── Mascota.java
-│   └── Tratamiento.java
-├── repositories
-│   └── UsuarioRepository.java
-└── services
-    └── UsuarioService.java
-```
-
-### Frontend
-```
-frontend/
-├── src/
-│   ├── components/
-│   │   ├── common/
-│   │   │   └── ConfirmDialog.tsx
-│   │   ├── users/
-│   │   │   ├── UserList.tsx
-│   │   │   └── UserForm.tsx
-│   │   ├── pets/
-│   │   │   ├── PetList.tsx
-│   │   │   └── PetForm.tsx
-│   │   ├── treatments/
-│   │   │   ├── TreatmentList.tsx
-│   │   │   └── TreatmentForm.tsx
-│   │   └── Dashboard.tsx
-│   ├── services/
-│   │   ├── api.tsx
-│   │   └── apiController.tsx
-│   ├── types/
-│   │   └── index.tsx
-│   ├── App.tsx
-│   └── index.tsx
-└── public/
-```
+---
 
 ## 📮 API REST
 
 ### Usuarios
-| Método | Endpoint                     | Descripción                       |
-|--------|------------------------------|-----------------------------------|
-| POST   | `/api/usuarios`              | Crear un usuario                  |
-| GET    | `/api/usuarios`              | Obtener todos los usuarios        |
-| GET    | `/api/usuarios/{id}`         | Obtener un usuario por ID         |
-| GET    | `/api/usuarios/{email}`      | Obtener un usuario por email      |
-| PUT    | `/api/usuarios/{id}`         | Editar un usuario por ID          |
-| DELETE | `/api/usuarios/{id}`         | Eliminar un usuario               |
+
+| Metodo | Endpoint | Descripcion |
+|---|---|---|
+| POST | `/api/usuarios` | Crear un usuario |
+| GET | `/api/usuarios` | Obtener todos los usuarios |
+| GET | `/api/usuarios/{id}` | Obtener un usuario por ID |
+| PUT | `/api/usuarios/{id}` | Editar un usuario |
+| DELETE | `/api/usuarios/{id}` | Eliminar un usuario |
 
 ### Mascotas
-| Método | Endpoint                                               | Descripción                              |
-|--------|--------------------------------------------------------|------------------------------------------|
-| POST   | `/api/usuarios/{id}/mascotas`                          | Agregar mascota a un usuario             |
-| GET    | `/api/usuarios/{id}/mascotas`                          | Obtener todas las mascotas del usuario   |
-| PUT    | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}`      | Editar una mascota                       |
-| DELETE | `/api/usuarios/{id}/mascotas/{mascotaId}`             | Eliminar una mascota                     |
+
+| Metodo | Endpoint | Descripcion |
+|---|---|---|
+| POST | `/api/usuarios/{id}/mascotas` | Agregar mascota a un usuario |
+| GET | `/api/usuarios/{id}/mascotas` | Obtener mascotas del usuario |
+| PUT | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}` | Editar una mascota |
+| DELETE | `/api/usuarios/{id}/mascotas/{mascotaId}` | Eliminar una mascota |
 
 ### Tratamientos
-| Método | Endpoint                                                                           | Descripción                                |
-|--------|------------------------------------------------------------------------------------|--------------------------------------------|
-| POST   | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}/tratamientos`                     | Agregar tratamiento a una mascota          |
-| GET    | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}/tratamientos`                     | Obtener todos los tratamientos de mascota  |
-| DELETE | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}/tratamientos/{tratamientoId}`     | Eliminar tratamiento                       |
 
-## 🌐 Rutas de la Aplicación Frontend
+| Metodo | Endpoint | Descripcion |
+|---|---|---|
+| POST | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}/tratamientos` | Agregar tratamiento |
+| GET | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}/tratamientos` | Obtener tratamientos |
+| DELETE | `/api/usuarios/{usuarioId}/mascotas/{mascotaId}/tratamientos/{tratamientoId}` | Eliminar tratamiento |
 
-- `/` - Dashboard principal
-- `/users` - Lista de usuarios
-- `/users/new` - Formulario para crear usuario
-- `/users/edit/:id` - Formulario para editar usuario
-- `/pets` - Lista de todas las mascotas
-- `/pets/new` - Formulario para crear mascota
-- `/pets/edit/:id` - Formulario para editar mascota
-- `/users/:userId/pets` - Mascotas de un usuario específico
-- `/users/:userId/pets/new` - Crear mascota para un usuario específico
-- `/treatments` - Lista de todos los tratamientos
-- `/treatments/new` - Formulario para crear tratamiento
-- `/pets/:petId/treatments` - Tratamientos de una mascota específica
-- `/pets/:petId/treatments/new` - Crear tratamiento para una mascota específica
+---
 
-## 📊 Dashboard
+## 🌐 Rutas del frontend
 
-La aplicación incluye un dashboard que muestra:
-- Número total de usuarios registrados
-- Número total de mascotas
-- Número total de tratamientos
-- Usuarios y mascotas añadidos recientemente
+| Ruta | Descripcion |
+|---|---|
+| `/` | Dashboard principal |
+| `/users` | Lista de usuarios |
+| `/users/new` | Crear usuario |
+| `/users/edit/:id` | Editar usuario |
+| `/pets` | Lista de mascotas |
+| `/users/:userId/pets` | Mascotas de un usuario |
+| `/treatments` | Lista de tratamientos |
+| `/pets/:petId/treatments` | Tratamientos de una mascota |
 
-## 👨‍💻 Autores
-- [@Fernandodg97](https://github.com/Fernandodg97)
-- [@Msedjari10](https://github.com/Msedjari10)
+---
+
+## 🚀 Instalacion y puesta en marcha
+
+### Prerrequisitos
+
+- Java 21 y Maven
+- Node.js v14+
+- Couchbase Server con bucket `veterinario` creado
+
+### Backend
+
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+Disponible en `http://localhost:4040`
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Disponible en `http://localhost:5173`
+
+### Configuracion de Couchbase
+
+```properties
+spring.couchbase.connection-string=localhost
+spring.couchbase.bucket.name=veterinario
+spring.couchbase.username=usuario
+spring.couchbase.password=usuario
+```
+
+---
+
+## 👨‍💻 Autor
+
+| | |
+|---|---|
+| **Fernando Diaz** | [github.com/Fernandodg97](https://github.com/Fernandodg97) |
+
+---
 
 ## 📄 Licencia
 
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es) 
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)
